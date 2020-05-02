@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="overlay">
+        <div>
+            <button id="startButton">Click to Play</button>
+            <p>Video playback with audio requires user interaction.</p>
+        </div>
+    </div>
+
+    <div id="container"></div>
+
+    <video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
+        <!-- <source src="sintel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
+        <source src="DIRTY MONITOR - SHOWREEL.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+
+    <script src="three.min.js"></script>
+    <script src="GLTFLoader.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script src="threevideodemo.js"></script>
+</body>
+
+</html>
