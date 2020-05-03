@@ -18,9 +18,7 @@ function init() {
   document.body.appendChild( container );
   
   camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 20000 );
-  camera.position.z = 200;
-  // camera.position.x = -300;
-  // camera.position.y = -300;
+  camera.position.z = 300;
 
   scene = new THREE.Scene();
 
@@ -42,24 +40,17 @@ function init() {
   texture.magFilter = 9729;
   texture.format = THREE.RGBFormat;
   texture.encoding = THREE.sRGBEncoding;
-  // texture.flipY = false;
   texture.flipX = true;
   texture.wrapS = 10497;
   texture.wrapT = 10497;
   texture.repeat.set(4, 4);
   texture.anisotropy = 16;
 
-  // var parameters = { color: 0xffffff, map: texture };
-
-  // materia = new THREE.MeshLambertMaterial( parameters );
-
-
   let loader = new THREE.GLTFLoader();
     loader.load("./yokohama/scene.gltf", function(object) {
         let model = object.scene.children[0];
         model.scale.set(50,60,40)
-        model.position.set(0, 3000, 0);
-        // model.rotation.x = 3;
+        model.position.set(0, 9000, 0);
         model.traverse( function ( child ) {
       
           if (child instanceof THREE.Mesh) {
@@ -68,25 +59,15 @@ function init() {
               child.material.map.needsUpdate = true;
           }
         });
-      //   model.material = new THREE.MeshLambertMaterial({
-      //     map: texture,
-      //     color: 0xffffff
-      // });
         scene.add(model);
         }, undefined, function ( error ) {
-
           console.error( error );
-    
         } );
 
   let control = new THREE.OrbitControls(camera, renderer.domElement)
-
-
 }
 
 function animate() {
-
-  // camera.lookAt( scene.position );
   
   renderer.render(scene, camera);
 
