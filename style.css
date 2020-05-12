@@ -7,3 +7,21 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
+#overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    height: 30vh;
+    width: 30vw;
+
+}
